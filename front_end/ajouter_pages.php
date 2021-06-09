@@ -37,11 +37,11 @@
                                     <div class="md:space-y-2 mb-3">
                                         <div class="flex items-center py-6">
                                             <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                <img class="w-40 h-40 mr-4 object-cover" src="" alt="Avatar Upload">
+                                                <img class="w-40 h-40 mr-4 object-cover" src="" id="img1" alt="Avatar Upload">
                                             </div>
                                             <label class="cursor-pointer ">
                                                 <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                <input type="file" class="hidden" :multiple="multiple" :accept="accept">
+                                                <input type="file" class="hidden" accept="image/*" onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0])">
                                             </label>
                                         </div>
                                     </div>
