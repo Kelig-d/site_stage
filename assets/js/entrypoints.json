@@ -1,0 +1,66 @@
+{
+  "entrypoints": {
+    "home": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/home.js"
+      ]
+    },
+    "web": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/web.js"
+      ]
+    },
+    "prestations": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/prestations.js"
+      ]
+    },
+    "contact": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/contact.js"
+      ]
+    },
+    "navigation": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/vendors-node_modules_react-dom_index_js.js",
+        "/assets/js/vendors-node_modules_react-router-dom_esm_react-router-dom_js.js",
+        "/assets/js/navigation.js"
+      ]
+    },
+    "admin": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/vendors-node_modules_react-dom_index_js.js",
+        "/assets/js/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-1a9e8e.js",
+        "/assets/js/admin.js"
+      ]
+    },
+    "suppression": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_react_index_js.js",
+        "/assets/js/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-1a9e8e.js",
+        "/assets/js/suppression.js"
+      ]
+    },
+    "main": {
+      "js": [
+        "/assets/js/runtime.js"
+      ],
+      "css": [
+        "/assets/js/main.css"
+      ]
+    }
+  }
+}
