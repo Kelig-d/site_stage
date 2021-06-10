@@ -7,7 +7,7 @@ export default function Supression(props) {
     return (
       <>
         <button
-          className="bg-red-600 text-white float-right px-3 py-1 rounded-md"
+          className="ransition duration-500 ease-in-out transform hover:scale-110 bg-red-600 hover:bg-red-700 text-white float-right px-3 py-1 rounded-md"
           type="button"
           onClick={() => setShowModal(true)}
         >
@@ -50,8 +50,8 @@ export default function Supression(props) {
                     >
                       Annuler
                     </button>
-                    <a href={"../back_end/supprimer_pages.php?id="+id}><button type="button"
-                      className="bg-red-600 text-white float-right px-3 py-1 rounded-md"
+                    <a href={"../back_end/supprimer_pages.php?id="+id+"&title="+title}><button type="button"
+                      className="transition duration-500 ease-in-out transform hover:scale-110 bg-red-600 hover:bg-red-700 text-white float-right px-3 py-1 rounded-md"
                     >
                       Supprimer
                     </button></a>

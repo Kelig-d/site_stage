@@ -25,7 +25,7 @@
                 $text1 = $row['TEXT'];
                 $text2 = $row['TEXT2'];
                 $text3 = $row['TEXT3'];
-                $photo1 = $row['PHOTOS'];
+                $photo1 = $row['PHOTOS1'];
                 $photo2 = $row['PHOTOS2'];
                 $photo3 = $row['PHOTOS3'];
                 break;
@@ -40,7 +40,7 @@
                         <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                     </div>
                     <div class="mt-5">
-                        <form action="../back_end/modifier_pages.php" method="post">
+                        <form action="../back_end/modifier_pages.php" method="post" enctype="multipart/form-data">
                             <h3 class="font-semibold text-lg mr-auto my-3">Titre : <input class=" px-3 appearance-none bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg" name="title" value=<?php echo '"'.$title.'"'; ?>></h3>
                             <div class="form">
                                 <div class=" my-5">
@@ -54,11 +54,11 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo1.'"' ?> alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo1.'"' ?> id="img1" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input name="photo1" type="file" class="hidden" :multiple="multiple" :accept="accept">
+                                                    <input  type="file" class="hidden" name="photo1" accept="image/*" value="default" onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0]) ">
                                                 </label>
                                             </div>
                                         </div>
@@ -75,11 +75,11 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo2.'"' ?> alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo2.'"' ?> id="img2" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input name="photo2" type="file" class="hidden" :multiple="multiple" :accept="accept">
+                                                    <input  type="file" class="hidden" name="photo2" accept="image/*" value="default" onchange="document.getElementById('img2').src = window.URL.createObjectURL(this.files[0])">
                                                 </label>
                                             </div>
                                         </div>
@@ -96,18 +96,19 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo3.'"' ?> alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo3.'"' ?> id="img3" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input name="photo3" type="file" class="hidden" :multiple="multiple" :accept="accept">
+                                                    <input  type="file" class="hidden" name="photo3" accept="image/*" value="default" onchange="document.getElementById('img3').src = window.URL.createObjectURL(this.files[0]) ">
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <input class="hidden" name="id" value=<?= $id ?> >
-                                <button type="submit" class="bg-green-500 text-white float-right my-3 mr-10 px-5 py-3 rounded-md">Enregistrer</button>
+                                <input class="hidden" name="oldtitle" value=<?= $title ?> >
+                                <input class="bg-green-500 text-white float-right my-3 mr-10 px-5 py-3 rounded-md cursor-pointer" name="ajouter" type="submit" value="Enregistrer">
                             </div>
                         </form>
                         <a href="gestion_pages.php"><button class="bg-red-600  text-white float-right my-3 mr-10 px-7 py-3 rounded-md">Annuler</button></a>
