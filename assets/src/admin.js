@@ -21,7 +21,7 @@ class Gestion_pages extends React.Component{
     const pages = JSON.parse(this.props.propsPages);
     return (
         <div>
-        <a href="../index.php"><button className="border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Retour</button></a>
+        <a href="../index.php"><button className="focus:outline-none border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Retour</button></a>
         <div className=" flex flex-wrap items-center justify-center h-full">
         {
             pages.map((pages, index)=>{
@@ -39,7 +39,7 @@ class Gestion_pages extends React.Component{
                             {pages.TEXT}
                         </section>
                         <section className="font-normal text-md">
-                        <a href={"modifier_pages.php?id="+pages.ID} ><button className="transition duration-500 ease-in-out transform hover:scale-110 bg-yellow-500 hover:bg-yellow-600 text-white float-left px-3 py-1 rounded-md">Modifier</button></a>
+                        <a className="focus:outline-none" href={"modifier_pages.php?id="+pages.ID} ><button className="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 bg-yellow-500 hover:bg-yellow-600 text-white float-left px-3 py-1 rounded-md">Modifier</button></a>
                             <Suppression id={pages.ID} title={pages.TITLE}/>
                             
                         </section>
@@ -49,7 +49,7 @@ class Gestion_pages extends React.Component{
         }
         </div>
         <div className="flex flex-wrap items-center justify-center h-full my-5">
-        <a href="ajouter_pages.php"><button className="transition duration-500 ease-in-out transform hover:scale-110 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-md">Ajouter une page</button></a>
+        <a className="focus:outline-none" href="ajouter_pages.php"><button className=" focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-md">Ajouter une page</button></a>
         </div>
         </div>
         

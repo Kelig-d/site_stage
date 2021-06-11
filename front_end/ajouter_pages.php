@@ -1,25 +1,16 @@
 <!DOCTYPE html>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tailwind Starter Template - Minimal Blog: Tailwind Toolbox</title>
-    <meta name="author" content="name" />
-    <meta name="description" content="description here" />
-    <meta name="keywords" content="keywords,here" />
-    <link href="../assets/css/main.css" rel="stylesheet" />
-    <!--Replace with your tailwind.css once created-->
-</head>
-
+<html lang="fr">
+<?php
+require('../back_end/db.php');
+$title = "Armor productions - Ajout de page";
+include('../includes/header.php');
+?>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <?php
-    require('../back_end/db.php');
-    ?>
     <div class="grid mt-8  gap-8 grid-cols-1">
         <div class="flex flex-col ">
             <div class="bg-white shadow-md rounded-3xl p-5">
+                <a href="gestion_pages.php"><button class="focus:outline-none border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Retour</button></a>
                 <div class="flex flex-col sm:flex-row items-center">
                     <h2 class="font-semibold text-lg mr-auto">Créer la page</h2>
                     <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
@@ -93,4 +84,7 @@
             </div>
         </div>
     </div>
+    <?php require('../includes/footer.php'); ?>
 </body>
+
+</html>

@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Tailwind Starter Template - Minimal Blog: Tailwind Toolbox</title>
-    <meta name="author" content="name" />
-    <meta name="description" content="description here" />
-    <meta name="keywords" content="keywords,here" />
-    <link href="../assets/css/main.css" rel="stylesheet" />
-    <!--Replace with your tailwind.css once created-->
-</head>
-
+<html lang="fr">
+<?php
+require('../back_end/db.php');
+include('../back_end/infos_pages.php');
+$title = "Armor productions - Modification de page";
+include('../includes/header.php');
+?>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
     <?php
-    require('../back_end/db.php');
-    include('../back_end/infos_pages.php');
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         foreach ($pages as $row) {
@@ -35,13 +27,14 @@
         <div class="grid mt-8  gap-8 grid-cols-1">
             <div class="flex flex-col ">
                 <div class="bg-white shadow-md rounded-3xl p-5">
+                    <a href="gestion_pages.php"><button class="focus:outline-none border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Retour</button></a>
                     <div class="flex flex-col sm:flex-row items-center">
                         <h2 class="font-semibold text-lg mr-auto">Modifier la page <?php echo $title; ?> </h2>
                         <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                     </div>
                     <div class="mt-5">
                         <form action="../back_end/modifier_pages.php" method="post" enctype="multipart/form-data">
-                            <h3 class="font-semibold text-lg mr-auto my-3">Titre : <input class=" px-3 appearance-none bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg" name="title" value=<?php echo '"'.$title.'"'; ?>></h3>
+                            <h3 class="font-semibold text-lg mr-auto my-3">Titre : <input class=" px-3 appearance-none bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg" name="title" value=<?php echo '"' . $title . '"'; ?>></h3>
                             <div class="form">
                                 <div class=" my-5">
                                     <label class="font-semibold text-gray-600 py-2 px-5">Paragraphe 1 :</label>
@@ -54,11 +47,11 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo1.'"' ?> id="img1" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo1 . '"' ?> id="img1" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
-                                                    <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input  type="file" class="hidden" name="photo1" accept="image/*" value="default" onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0]) ">
+                                                    <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
+                                                    <input type="file" class="hidden" name="photo1" accept="image/*" value="default" onchange="document.getElementById('img1').src = window.URL.createObjectURL(this.files[0]) ">
                                                 </label>
                                             </div>
                                         </div>
@@ -75,11 +68,11 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo2.'"' ?> id="img2" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo2 . '"' ?> id="img2" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
-                                                    <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input  type="file" class="hidden" name="photo2" accept="image/*" value="default" onchange="document.getElementById('img2').src = window.URL.createObjectURL(this.files[0])">
+                                                    <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
+                                                    <input type="file" class="hidden" name="photo2" accept="image/*" value="default" onchange="document.getElementById('img2').src = window.URL.createObjectURL(this.files[0])">
                                                 </label>
                                             </div>
                                         </div>
@@ -96,22 +89,22 @@
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"'.$photo3.'"' ?> id="img3" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo3 . '"' ?> id="img3" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
-                                                    <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
-                                                    <input  type="file" class="hidden" name="photo3" accept="image/*" value="default" onchange="document.getElementById('img3').src = window.URL.createObjectURL(this.files[0]) ">
+                                                    <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
+                                                    <input type="file" class="hidden" name="photo3" accept="image/*" value="default" onchange="document.getElementById('img3').src = window.URL.createObjectURL(this.files[0]) ">
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <input class="hidden" name="id" value=<?= $id ?> >
-                                <input class="hidden" name="oldtitle" value=<?= $title ?> >
-                                <input class="bg-green-500 text-white float-right my-3 mr-10 px-5 py-3 rounded-md cursor-pointer" name="ajouter" type="submit" value="Enregistrer">
+                                <input class="hidden" name="id" value=<?= $id ?>>
+                                <input class="hidden" name="oldtitle" value=<?= $title ?>>
+                                <input class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 bg-green-500 hover:bg-green-600 text-white float-right my-3 mr-10 px-5 py-3 rounded-md cursor-pointer" name="ajouter" type="submit" value="Enregistrer">
                             </div>
                         </form>
-                        <a href="gestion_pages.php"><button class="bg-red-600  text-white float-right my-3 mr-10 px-7 py-3 rounded-md">Annuler</button></a>
+                        <a class="focus:outline-none" href="gestion_pages.php"><button class="focus:outline-none focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 bg-red-500 hover:bg-red-600 text-white float-right my-3 mr-10 px-7 py-3 rounded-md">Annuler</button></a>
                     </div>
                 </div>
             </div>
@@ -129,5 +122,8 @@
             </div>
         </div>
 
-    <?php } ?>
+    <?php }
+    require('../includes/footer.php'); ?>
 </body>
+
+</html>

@@ -15,35 +15,35 @@ function Navigation() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/armor_production/home">Home</Link>
-            </li>
-            <li>
-              <Link to="/armor_production/web">Web</Link>
-            </li>
-            <li>
-              <Link to="/armor_production/prestations">Prestations</Link>
-            </li>
-            <li>
-              <Link to="/armor_production/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="bg-gray-200">
+        <div className="flex flex-col sm:flex-row">
+          <div className="w-64 h-screen bg-gray-800 mt-8 sm:mt-0">
+            <div className="flex items-center justify-center mt-10">
+              <img className="h-6" src="" />
+            </div>
+            <nav className="mt-10">
+                <Link to="/Armor_productions/front_end" className="divide-y divide-gray-300"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110 ">Home<span className="nav-underline"></span></span></Link>
+                <Link to="/Armor_productions/front_end/web"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Web</span></Link>
+                <Link to="/Armor_productions/front_end/prestations"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Prestations</span></Link>
+                <Link to="/Armor_productions/front_end/contact"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Contact</span></Link>
+            </nav>
+          </div>
+        </div></div>
+
         <Switch>
-          <Route path="/armor_production/web">
+          <Route exact path="/Armor_productions/front_end/web">
             <Web />
           </Route>
-          <Route path="/armor_production/prestations">
+          <Route exact path="/Armor_productions/front_end/prestations">
             <Prestations />
           </Route>
-          <Route path="/armor_production/contact">
+          <Route exact path="/Armor_productions/front_end/contact">
             <Contact />
           </Route>
-          <Route path="/armor_production/home">
+          <Route exact path="/Armor_productions/front_end/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>
