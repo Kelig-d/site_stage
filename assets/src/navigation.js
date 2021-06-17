@@ -3,51 +3,76 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import Web from './web';
-import Home from './home';
-import Contact from './contact';
-import Prestations from './prestations';
+import Page from './page';
+import {VscDebugBreakpointLog} from 'react-icons/vsc'
+import {Helmet} from "react-helmet";
 
-function Navigation() {
+class Navigation extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+
+      render(){
+          
+    const pages = JSON.parse(this.props.propsPages);
   return (
-    <Router>
-      <div>
-      <div className="bg-gray-200">
-        <div className="flex flex-col sm:flex-row">
-          <div className="w-64 h-screen bg-gray-800 mt-8 sm:mt-0">
-            <div className="flex items-center justify-center mt-10">
-              <img className="h-6" src="" />
-            </div>
-            <nav className="mt-10">
-                <Link to="/Armor_productions/front_end" className="divide-y divide-gray-300"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110 ">Home<span className="nav-underline"></span></span></Link>
-                <Link to="/Armor_productions/front_end/web"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Web</span></Link>
-                <Link to="/Armor_productions/front_end/prestations"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Prestations</span></Link>
-                <Link to="/Armor_productions/front_end/contact"><span className="flex justify-center items-center mt-5 py-2 px-8 text-gray-400 mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Contact</span></Link>
-            </nav>
-          </div>
-        </div></div>
-
-        <Switch>
-          <Route exact path="/Armor_productions/front_end/web">
-            <Web />
-          </Route>
-          <Route exact path="/Armor_productions/front_end/prestations">
-            <Prestations />
-          </Route>
-          <Route exact path="/Armor_productions/front_end/contact">
-            <Contact />
-          </Route>
-          <Route exact path="/Armor_productions/front_end/">
-            <Home />
-          </Route>
-
+      <Router>
+    <div className="relative min-h-screen md:flex">
+        <Helmet>
+            <script src="assets/js/sidebar_mobile.js"></script>
+        </Helmet>
+    {/* mobile menu bar */}
+    <div className="bg-black text-gray-100 flex justify-between md:hidden">
+      {/* logo */}
+      <a href="#" className="block p-4 text-white font-bold">Better Dev</a>
+      {/* mobile menu button */}
+      <button className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
+        <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    {/* sidebar */}
+    <div className="z-40 sidebar bg-black text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+      {/* logo */}
+      {/* nav */}
+      <nav>
+      {
+        pages.map((pages)=>{
+            return(
+                <Link key={pages.ID} to={"/Armor_productions/"+pages.TITLE} >
+                    <span className="flex justify-center items-center mt-5 py-2 px-8 text-white mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">{pages.TITLE}</span>
+                </Link>
+            );
+        })
+      }
+      </nav>
+    </div>
+    {/* content */}
+    <Switch>
+        <Route path="/Armor_productions/" exact component={props => <Page propsPages={pages[0]} />} />
+        {
+            pages.map((pages)=>{
+                return(
+                    <Route key={pages.ID} path={"/Armor_productions/"+pages.TITLE} exact component={props => <Page propsPages={pages}/>} />
+                );
+            })
+        }
         </Switch>
-      </div>
-    </Router>
+  </div>
+  </Router>
   );
 }
-ReactDOM.render(<Navigation />,document.getElementById('root'));
+}
+
+const domContainer = document.getElementById("navbar");
+
+const pages = domContainer.innerHTML;
+
+ReactDOM.render(<Navigation propsPages={pages}/>,domContainer);
 

@@ -4,5 +4,4 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?= $title?></title>
     <link href="../assets/css/main.css" rel="stylesheet" />
-    <!--Replace with your tailwind.css once created-->
 </head>

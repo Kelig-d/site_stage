@@ -13,8 +13,6 @@ Encore
     .setPublicPath('/assets/js')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
-    .addStyleEntry('main', './assets/css/main.css')
-    .enablePostCssLoader()
 
     /*
      * ENTRY CONFIG
@@ -25,13 +23,11 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('home', './assets/src/home.js')
-    .addEntry('web', './assets/src/web.js')
-    .addEntry('prestations', './assets/src/prestations.js')
-    .addEntry('contact', './assets/src/contact.js')
+    .addEntry('page', './assets/src/page.js')
     .addEntry('navigation', '/assets/src/navigation.js')
     .addEntry('admin', './assets/src/admin.js')
     .addEntry('suppression', './assets/src/suppression.js')
+    .addEntry('sidebar_mobile', './assets/Src/sidebar_mobile.js')
     //.addEntry('page2', './assets/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

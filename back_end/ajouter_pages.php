@@ -38,6 +38,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
         $photo1 = $photos[0];
     } else {
         $photo1 = "../assets/images/default.png";
+        
     }
     if (isset($photos[1])) {
         $photo2 = $photos[1];
@@ -63,7 +64,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
     $req->execute();
     $querry = $req->fetchAll(PDO::FETCH_ASSOC);
     $id=$querry[0]['Id'];
-    $req = $db_admin->prepare("INSERT INTO page(ID,TITLE,TEXT,TEXT2,TEXT3,PHOTOS1,PHOTOS2,PHOTOS3) VALUES(:id,:title,:text1,:text2,:text3,:photo1,:photo2,:photo3)");
+    $req = $db_admin->prepare("INSERT INTO page(ID,TITLE,TEXT1,TEXT2,TEXT3,PHOTOS1,PHOTOS2,PHOTOS3) VALUES(:id,:title,:text1,:text2,:text3,:photo1,:photo2,:photo3)");
     $req->bindParam(':id',$id,PDO::PARAM_INT);
     $req->bindParam(':title', $title, PDO::PARAM_STR);
     $req->bindParam(':text1', $text1, PDO::PARAM_STR);
