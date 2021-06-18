@@ -29,6 +29,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
                 }
                 $dest_path = $uploadFileDir . $newFileName;
                 move_uploaded_file($fileTmpPath, $dest_path);
+                $dest_path =  'assets/images/' . $folder . '/'.$newFileName;
                 array_push($photos, $dest_path);
             }
         }
@@ -37,18 +38,18 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
     if (isset($photos[0])) {
         $photo1 = $photos[0];
     } else {
-        $photo1 = "../assets/images/default.png";
+        $photo1 = "assets/images/default.png";
         
     }
     if (isset($photos[1])) {
         $photo2 = $photos[1];
     } else {
-        $photo2 = "../assets/images/default.png";
+        $photo2 = "assets/images/default.png";
     }
     if (isset($photos[2])) {
         $photo3 = $photos[2];
     } else {
-        $photo3 = "../assets/images/default.png";
+        $photo3 = "assets/images/default.png";
     }
 }
 
