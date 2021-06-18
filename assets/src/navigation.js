@@ -29,7 +29,7 @@ class Navigation extends React.Component{
     {/* mobile menu bar */}
     <div className="bg-black text-gray-100 flex justify-between md:hidden">
       {/* logo */}
-      <a href="#" className="block p-4 text-white font-bold">Better Dev</a>
+      <Link to="/Armor_production/" className="block p-4 text-white font-bold">Armor productions</Link>
       {/* mobile menu button */}
       <button className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
         <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,6 +40,7 @@ class Navigation extends React.Component{
     {/* sidebar */}
     <div className="z-40 sidebar bg-black text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
       {/* logo */}
+      <Link to="/armor_productions/" className="block p-4 text-white font-bold flex justify-center items-center ">Armor productions</Link>
       {/* nav */}
       <nav>
       {
