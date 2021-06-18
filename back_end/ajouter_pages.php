@@ -29,6 +29,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
                 }
                 $dest_path = $uploadFileDir . $newFileName;
                 move_uploaded_file($fileTmpPath, $dest_path);
+                $dest_path =  'assets/images/' . $folder . '/'.$newFileName;
                 array_push($photos, $dest_path);
             }
         }

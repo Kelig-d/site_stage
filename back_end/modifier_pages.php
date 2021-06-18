@@ -34,7 +34,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 'Enregistrer') {
         else{
             include('infos_pages.php');
             foreach($pages as $row){
-                if($row['PHOTOS'.$index]=='../assets/images/default.png'){
+                if($row['PHOTOS'.$index]=='assets/images/default.png'){
                    $photos[$index-1] = null;
                 }
                 else{
