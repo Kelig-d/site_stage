@@ -14,7 +14,7 @@ include('../includes/header.php');
         foreach ($pages as $row) {
             if ($row['ID'] == $id) {
                 $title = $row['TITLE'];
-                $text1 = $row['TEXT'];
+                $text1 = $row['TEXT1'];
                 $text2 = $row['TEXT2'];
                 $text3 = $row['TEXT3'];
                 $photo1 = $row['PHOTOS1'];
@@ -47,7 +47,7 @@ include('../includes/header.php');
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo1 . '"' ?> id="img1" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"../' . $photo1 . '"' ?> id="img1" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
@@ -68,7 +68,7 @@ include('../includes/header.php');
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo2 . '"' ?> id="img2" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"../' . $photo2 . '"' ?> id="img2" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
@@ -89,7 +89,7 @@ include('../includes/header.php');
                                         <div class="md:space-y-2 mb-3">
                                             <div class="flex items-center py-6">
                                                 <div class="w-40 h-40 mr-4 flex-none rounded-xl border overflow-hidden">
-                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"' . $photo3 . '"' ?> id="img3" alt="Avatar Upload">
+                                                    <img class="w-40 h-40 mr-4 object-cover" src=<?= '"../' . $photo3 . '"' ?> id="img3" alt="Avatar Upload">
                                                 </div>
                                                 <label class="cursor-pointer ">
                                                     <span class="focus:outline-none transition duration-500 ease-in-out transform hover:scale-110 text-white text-sm py-2 px-4 rounded-full bg-green-400 hover:bg-green-500 hover:shadow-lg">Browse</span>
