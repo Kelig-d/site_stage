@@ -21,7 +21,7 @@ class Gestion_pages extends React.Component{
     const pages = JSON.parse(this.props.propsPages);
     return (
         <div>
-        <a href="../"><button className="focus:outline-none border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Retour</button></a>
+        <a href="../"><button className="focus:outline-none border border-black transition duration-500 ease-in-out transform hover:scale-110 bg-white hover:bg-black hover:text-white text-black mx-3 my-5 px-10 py-3 rounded-full">Se déconnecter</button></a>
         <div className=" flex flex-wrap items-center justify-center h-full">
         {
             pages.map((pages, index)=>{
@@ -29,7 +29,7 @@ class Gestion_pages extends React.Component{
                     <div key={pages.ID} className="flex flex-col md:w-2/5 p-3 space-y-5 rounded-xl border border-black bg-white shadow-md my-3 mx-5">
                         <div className="flex items-center justify-center">
                         <section className="flex items-center justify-center text-sm font-thin text-orange-400  max-h-full max-w-lg">
-                            <img className="object-contain md:object-scale-down  max-h-80" src={"../"+pages.PHOTOS1} />
+                            <img className="object-contain md:object-scale-down  max-h-80" src={"../"+pages.PHOTOS1} placeholder="image illustration article"/>
                         </section>
                         </div>
                         <section className="text-3xl font-bold">

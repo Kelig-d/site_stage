@@ -4,4 +4,5 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><?= $title?></title>
     <link href="../assets/css/main.css" rel="stylesheet" />
+    <link rel="icon" href="../assets/images/favicon.png" />
 </head>

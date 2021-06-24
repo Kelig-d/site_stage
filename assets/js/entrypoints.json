@@ -3,16 +3,17 @@
     "page": {
       "js": [
         "/assets/js/runtime.js",
-        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_arra-653f40.js",
+        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_expo-55736e.js",
         "/assets/js/page.js"
       ]
     },
     "navigation": {
       "js": [
         "/assets/js/runtime.js",
-        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_arra-653f40.js",
+        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_expo-55736e.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_object_to-string_js-node_modules_core-js_modules_es_s-6657b7.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_array_map_js-node_modules_core-js_modules_es_object_c-5c7480.js",
+        "/assets/js/vendors-node_modules_axios_index_js.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_object_keys_js-node_modules_react-helmet_es_Helmet_js-3e5e30.js",
         "/assets/js/navigation.js"
       ]
@@ -20,7 +21,7 @@
     "admin": {
       "js": [
         "/assets/js/runtime.js",
-        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_arra-653f40.js",
+        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_expo-55736e.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_object_to-string_js-node_modules_core-js_modules_es_s-6657b7.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_array_map_js-node_modules_core-js_modules_es_object_c-5c7480.js",
         "/assets/js/assets_src_suppression_js.js",
@@ -30,7 +31,7 @@
     "suppression": {
       "js": [
         "/assets/js/runtime.js",
-        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_arra-653f40.js",
+        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_expo-55736e.js",
         "/assets/js/vendors-node_modules_core-js_modules_es_object_to-string_js-node_modules_core-js_modules_es_s-6657b7.js",
         "/assets/js/assets_src_suppression_js.js",
         "/assets/js/suppression.js"
@@ -40,6 +41,15 @@
       "js": [
         "/assets/js/runtime.js",
         "/assets/js/sidebar_mobile.js"
+      ]
+    },
+    "contact": {
+      "js": [
+        "/assets/js/runtime.js",
+        "/assets/js/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_expo-55736e.js",
+        "/assets/js/vendors-node_modules_core-js_modules_es_object_to-string_js-node_modules_core-js_modules_es_s-6657b7.js",
+        "/assets/js/vendors-node_modules_axios_index_js.js",
+        "/assets/js/contact.js"
       ]
     }
   }
