@@ -29,6 +29,7 @@ Encore
     .addEntry('suppression', './assets/src/suppression.js')
     .addEntry('sidebar_mobile', './assets/Src/sidebar_mobile.js')
     .addEntry('contact', './assets/src/contact.js')
+    .addEntry('accueil', './assets/src/accueil.js')
     //.addEntry('page2', './assets/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

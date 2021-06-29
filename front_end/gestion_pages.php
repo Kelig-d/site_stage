@@ -4,6 +4,7 @@
 include('../back_end/infos_pages.php');
 $title = "Armor productions - Gestion des pages";
 include('../includes/header.php');
+include('../middleware/admin.php');
 ?>
 
 <body>

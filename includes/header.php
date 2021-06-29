@@ -5,4 +5,5 @@
     <title><?= $title?></title>
     <link href="../assets/css/main.css" rel="stylesheet" />
     <link rel="icon" href="../assets/images/favicon.png" />
+    <?php session_start(); ?>
 </head>

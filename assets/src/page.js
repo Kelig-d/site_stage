@@ -19,7 +19,7 @@ function Page(props) {
               if(textes[key].texte){
               return(
                 <div key={index} className="flex flex-col shadow-md md:shadow-none rounded-lg md:rounded-none my-5 overflow-hidden md:mb-0 md:mx-auto md:flex md:items-center md:justify-center md:relative md:w-full md:float-left md:max-w-lg">
-                  <div className="md:float-right md:relative md:px-3 max-w-xl">
+                  <div className="md:float-right md:relative md:pl-10 max-w-xl">
                     <img src={textes[key].photo} placeholder="photo article"/>
                   </div>
                   <div className="md:left-0 md:max-w-xs md:h-1/2 md:overflow-hidden md:absolute md:p-2 md:bg-white md:shadow-lg md:border-l-4 border-black">

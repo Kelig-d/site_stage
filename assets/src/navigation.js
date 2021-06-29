@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import Page from './page';
+import Accueil from './accueil';
 import Contact from "./contact";
 import {Helmet} from "react-helmet";
 
@@ -15,7 +16,6 @@ class Navigation extends React.Component{
   constructor(){
     super();
   }
-
   render(){
     const pages = JSON.parse(this.props.propsPages);
     return (
@@ -39,8 +39,14 @@ class Navigation extends React.Component{
               <img src="assets/images/LOGO ARMOR PROD copyright MATTEO LATRUFFE.png" placeholder="logo avec texte"/>
             </Link>
             <nav>
+              <Link to="/" replace >
+                <span className="flex justify-center items-center mt-5 py-2 px-8 text-white mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">
+                  Accueil
+                </span>
+              </Link>
               {
                 pages.map((pages)=>{
+                  if(pages.ID!=1){
                   return(
                     <Link key={pages.ID} to={"/"+pages.TITLE} replace >
                       <span className="flex justify-center items-center mt-5 py-2 px-8 text-white mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">
@@ -48,6 +54,7 @@ class Navigation extends React.Component{
                       </span>
                     </Link>
                   );
+                  }
                 })
               }
               <Link to="/contact" replace ><span className="flex justify-center items-center mt-5 py-2 px-8 text-white mx-4 font-medium transition duration-500 ease-in-out transform hover:scale-110">Contact</span></Link>
@@ -56,12 +63,14 @@ class Navigation extends React.Component{
         </aside>
         <div className="justify-center items-center flex">
           <Switch>
-            <Route path="/" exact component={props => <Page propsPages={pages[0]} />} />
+            <Route path="/" exact component={props => <Accueil propsPages={pages[0]} />} />
             {
               pages.map((pages)=>{
-                return(
+                if(pages.ID!=1){
+                  return(
                     <Route key={pages.ID} path={"/"+pages.TITLE} exact component={props => <Page propsPages={pages}/>} />
-                );
+                  );
+                }
               })
             }
             <Route path="/contact" exact component={props => <Contact />} />
@@ -71,7 +80,6 @@ class Navigation extends React.Component{
     );
   }
 }
-
 const domContainer = document.getElementById("navbar");
 
 const pages = domContainer.innerHTML;

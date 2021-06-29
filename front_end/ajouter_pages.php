@@ -4,6 +4,7 @@
 require('../back_end/db.php');
 $title = "Armor productions - Ajout de page";
 include('../includes/header.php');
+include('../middleware/admin.php');
 ?>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">

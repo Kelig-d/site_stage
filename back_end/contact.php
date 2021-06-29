@@ -1,31 +1,27 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-$_POST = json_decode( file_get_contents("php://input"), true);
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require '../vendor/phpmailer/phpmailer/src/Exception.php';
-require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '../vendor/phpmailer/phpmailer/src/SMTP.php';
-
-$email = new PHPMailer(TRUE);
-
-if (empty($_POST['prenom']) && empty($_POST['email'])) die();
+print("coucou"."\n\r");
+if (empty($_POST['nom']) || empty($_POST['telephone']) || empty($_POST['mail']) || empty($_POST['societe']) || empty($_POST['code_postal']) || empty($_POST['sujet']) || empty($_POST['type']) || empty($_POST['message'])){
+	header('../Armor_productions/#/contact');
+}
+else{
 
 if ($_POST)
 	{
 
 	// set response code - 200 OK
 
-	http_response_code(200);
-	$subject = $_POST['nom']." ".$_POST['prenom'];
+	$subject = $_POST['type']. ' - '.$_POST['sujet'];
 	$to = "kelig.villalard@gmail.com";
-	$from = $_POST['email'];
+	$from = $_POST['mail'];
 
 	// data
 
-	$msg = $_POST['message'];
+	$msg = 	'Demande de la société :'.$_POST['societe']."\r\n".
+			'Code postal : '.$_POST['code_postal']."\r\n".
+			'Demande de la part de : '.$_POST['nom']."\r\n"
+			.$_POST['message'];
+
+	echo($msg);
 
 	// Headers
 
@@ -33,12 +29,8 @@ if ($_POST)
 	$headers.= "Content-type: text/html; charset=UTF-8\r\n";
 	$headers.= "From: <" . $from . ">";
 	mail($to, $subject, $msg, $headers);
-
-	// echo json_encode( $_POST );
-
-	echo json_encode(array(
-		"sent" => true
-	));
+    header('Location:../#/contact');
+	
 	}
   else
 	{
@@ -47,5 +39,6 @@ if ($_POST)
 
 	echo json_encode(["sent" => false, "message" => "Something went wrong"]);
 	}
+}
 
 ?>
