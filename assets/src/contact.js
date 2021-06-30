@@ -43,7 +43,7 @@ class Contact extends React.Component{
             <section className="left-40 top-0 text-gray-700 body-font">
             <div className="container px-5 py-24 mx-auto flex items-center justify-center h-full">
               <div className="flex flex-wrap items-center justify-center h-full w-full mb-20 flex-col items-center text-center">
-                <form className="w-full max-w-lg" action="back_end/contact.php" method="post">
+                <form className="w-full max-w-lg">
 
                     <div className="flex flex-wrap -mx-3 mb-6">
                         <div className="w-full md:w-1/2 px-3">
@@ -52,7 +52,7 @@ class Contact extends React.Component{
                             </label>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required name="nom" type="text" value={this.state.nom} onChange={e => this.setState({ nom: e.target.value })}/>
                         </div>
-                        <div className="w-full md:w-1/2 px-3">
+                        <div className="w-full md:w-1/2 mt-5 md:mt-0 px-3">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                 Numéro de téléphone*
                             </label>
@@ -76,7 +76,7 @@ class Contact extends React.Component{
                             </label>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required name="societe" type="text" value={this.state.societe} onChange={e => this.setState({ societe: e.target.value })}/>
                         </div>
-                        <div className="w-full md:w-1/2 px-3">
+                        <div className="w-full md:w-1/2 mt-5 md:mt-0 px-3">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                 Code postal*
                             </label>
@@ -91,7 +91,7 @@ class Contact extends React.Component{
                             </label>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required name="sujet" type="text" value={this.state.sujet} onChange={e => this.setState({ sujet: e.target.value })}/>
                         </div>
-                        <div className="w-full md:w-1/2 px-3">
+                        <div className="w-full md:w-1/2 mt-5 md:mt-0 px-3">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                 type de prestation*
                             </label>
@@ -101,7 +101,7 @@ class Contact extends React.Component{
                                 <option value="photo">Prestation photo</option>
                             </select>
                         </div>
-                        <div className="w-full px-3">
+                        <div className="w-full px-3 mt-5">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                 Message*
                             </label>
@@ -111,7 +111,7 @@ class Contact extends React.Component{
                     </div>
                     <div className="md:flex float-right md:items-center">
                         <div className="md:w-1/3">
-                            <button className="shadow bg-black transition duration-500 ease-in-out transform hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                            <button className="shadow bg-black transition duration-500 ease-in-out transform hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" onClick={e => this.handleFormSubmit(e)}>
                                 Envoyer
                             </button>
                         </div>

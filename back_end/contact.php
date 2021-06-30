@@ -16,10 +16,10 @@ if ($_POST)
 
 	// data
 
-	$msg = 	'Demande de la société :'.$_POST['societe']."\r\n".
-			'Code postal : '.$_POST['code_postal']."\r\n".
-			'Demande de la part de : '.$_POST['nom']."\r\n"
-			.$_POST['message'];
+	$msg = 	'Demande de la société :'.$_POST['societe'].
+			'<br /> Code postal : '.$_POST['code_postal'].
+			'<br />Demande de la part de : '.$_POST['nom']
+			.'<br />'.$_POST['message'];
 
 	echo($msg);
 
@@ -29,7 +29,7 @@ if ($_POST)
 	$headers.= "Content-type: text/html; charset=UTF-8\r\n";
 	$headers.= "From: <" . $from . ">";
 	mail($to, $subject, $msg, $headers);
-    header('Location:../#/contact');
+    // header('Location:../#/contact');
 	
 	}
   else
