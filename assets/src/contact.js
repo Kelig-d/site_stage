@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReCAPTCHA from "react-google-recaptcha";
+require('dotenv').config();
 
 class Contact extends React.Component{
     constructor(){
@@ -122,7 +123,7 @@ class Contact extends React.Component{
                         </div>
                     </div>
                     <div>
-                    <ReCAPTCHA sitekey="6LcKyVYbAAAAAA6rYnYJajJF12Xlv4JwC2DkH1L1" onChange={e => this.setState({ captcha: e.target.value })}/>
+                    <ReCAPTCHA sitekey={process.env.ReCAPTCHA_KEY} onChange={e => this.setState({ captcha: e.target.value })}/>
                     </div>
                 </form>
                 </div>
